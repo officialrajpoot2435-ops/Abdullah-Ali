@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EntryPrep Pakistan - ECAT, BCAT and MDCAT preparation with syllabus, universities, MCQs and AI study help.">
+  <meta name="theme-color" content="#0b1f3a">
+  <title>EntryPrep Pakistan | ECAT • BCAT • MDCAT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="EntryPrep home">
+    <span class="brand-mark">EP</span>
+    <span>EntryPrep<span class="brand-accent">PK</span></span>
+  </a>
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="navMenu" class="nav">
+    <a href="#home">Home</a>
+    <a href="#tests">Tests</a>
+    <a href="#universities">Universities</a>
+    <a href="#practice">Practice</a>
+    <a href="#about">About</a>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">PAKISTAN ENTRY TEST PREPARATION</span>
+    <h1>Prepare Smart.<br><span>Achieve More.</span></h1>
+    <p>One place for ECAT, BCAT and MDCAT preparation — with structured topics, practice questions, mock tests and an AI study assistant.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#tests">Start Preparing →</a>
+      <button class="btn secondary" id="heroAiBtn">Ask EntryPrep AI</button>
+    </div>
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="globalSearch" type="search" placeholder="Search ECAT, MDCAT, universities, topics...">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-orb">EP</div>
+    <h3>Your preparation dashboard</h3>
+    <p>Choose a test to unlock its syllabus, practice bank and mock tests.</p>
+    <div class="mini-grid">
+      <div><strong>03</strong><span>Test tracks</span></div>
+      <div><strong>24/7</strong><span>AI help</span></div>
+      <div><strong>∞</strong><span>Practice</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong>3</strong><span>Entry Test Tracks</span></div>
+  <div><strong>15</strong><span>Starter MCQs</span></div>
+  <div><strong>24/7</strong><span>AI Study Help</span></div>
+  <div><strong>100%</strong><span>Mobile Friendly</span></div>
+</section>
+
+<section id="tests" class="section">
+  <div class="section-head">
+    <div><span class="eyebrow">CHOOSE YOUR TRACK</span><h2>What are you preparing for?</h2></div>
+    <p>Open a track to explore its subjects, syllabus, universities and practice.</p>
+  </div>
+  <div id="testCards" class="test-grid"></div>
+</section>
+
+<section id="dashboard" class="section dashboard hidden">
+  <div class="dashboard-head">
+    <div>
+      <span class="eyebrow" id="dashEyebrow">TRACK</span>
+      <h2 id="dashTitle">Dashboard</h2>
+    </div>
+    <button class="btn secondary" id="closeDash">Close</button>
+  </div>
+  <div class="dashboard-layout">
+    <aside class="side-nav" id="sideNav">
+      <button class="active" data-panel="overview">Overview</button>
+      <button data-panel="universities">Universities</button>
+      <button data-panel="syllabus">Syllabus</button>
+      <button data-panel="papers">Past Papers</button>
+      <button data-panel="mcqs">MCQs</button>
+      <button data-panel="mock">Mock Test</button>
+    </aside>
+    <div class="dash-content">
+      <section id="panel-overview" class="dash-panel"></section>
+      <section id="panel-universities" class="dash-panel hidden"></section>
+      <section id="panel-syllabus" class="dash-panel hidden"></section>
+      <section id="panel-papers" class="dash-panel hidden"></section>
+      <section id="panel-mcqs" class="dash-panel hidden"></section>
+      <section id="panel-mock" class="dash-panel hidden"></section>
+    </div>
+  </div>
+</section>
+
+<section id="universities" class="section alt">
+  <div class="section-head">
+    <div><span class="eyebrow">UNIVERSITY DIRECTORY</span><h2>Explore universities</h2></div>
+    <p>Use official links to verify current admission rules, dates and eligibility.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter active" data-filter="ALL">All</button>
+    <button class="filter" data-filter="ECAT">ECAT</button>
+    <button class="filter" data-filter="BCAT">BCAT</button>
+    <button class="filter" data-filter="MDCAT">MDCAT</button>
+  </div>
+  <div id="universityGrid" class="university-grid"></div>
+</section>
+
+<section id="practice" class="section">
+  <div class="ai-banner">
+    <div><span class="eyebrow">YOUR STUDY ASSISTANT</span><h2>Stuck on a concept?</h2><p>Ask EntryPrep AI for a simple explanation, MCQs, formulas or a study plan.</p></div>
+    <button class="btn light" id="bannerAiBtn">Open AI Assistant →</button>
+  </div>
+</section>
+
+<section class="section progress-section">
+  <div class="section-head">
+    <div><span class="eyebrow">YOUR PROGRESS</span><h2>Keep improving</h2></div>
+    <button class="btn secondary" id="resetProgress">Reset progress</button>
+  </div>
+  <div class="progress-card">
+    <div class="progress-circle" id="progressCircle"><strong id="progressScore">0%</strong><span>Average</span></div>
+    <div class="progress-info">
+      <div><strong id="attemptCount">0</strong><span>Mock attempts</span></div>
+      <div><strong id="bestScore">0%</strong><span>Best score</span></div>
+      <div><strong id="questionsDone">0</strong><span>Questions answered</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <div class="about">
+    <span class="eyebrow">ABOUT ENTRYPREP</span>
+    <h2>Built to make preparation less confusing.</h2>
+    <p>EntryPrep organizes preparation into clear tracks instead of making students jump between scattered resources.</p>
+    <div class="about-grid">
+      <div><b>01</b><h3>Learn</h3><p>Follow a structured syllabus.</p></div>
+      <div><b>02</b><h3>Practice</h3><p>Test yourself with MCQs.</p></div>
+      <div><b>03</b><h3>Measure</h3><p>Use mock tests and progress tracking.</p></div>
+      <div><b>04</b><h3>Ask</h3><p>Get AI-assisted explanations.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><strong>EP EntryPrepPK</strong><p>ECAT • BCAT • MDCAT preparation platform.</p></div>
+  <p>© <span id="year"></span> EntryPrep Pakistan</p>
+</footer>
+
+<div id="toast" class="toast" role="status"></div>
+
+<div id="aiPanel" class="ai-panel hidden" aria-live="polite">
+  <div class="ai-head">
+    <div><b>EntryPrep AI</b><span>Study assistant</span></div>
+    <button id="closeAi" class="icon-btn" aria-label="Close AI">×</button>
+  </div>
+  <div id="aiMessages" class="ai-messages">
+    <div class="ai-msg bot">Hi! Ask me to explain a topic, make MCQs, solve a question, or create a study plan.</div>
+  </div>
+  <div class="quick-row">
+    <button data-ai="Explain this topic simply: ">Explain</button>
+    <button data-ai="Give me 5 MCQs on: ">MCQs</button>
+    <button data-ai="Make a study plan for: ">Study plan</button>
+  </div>
+  <div class="ai-compose">
+    <select id="aiTest" aria-label="Preparation track">
+      <option>General</option><option>ECAT</option><option>BCAT</option><option>MDCAT</option>
+    </select>
+    <textarea id="aiInput" rows="3" placeholder="Type your question..."></textarea>
+    <button class="btn primary" id="sendAi">Send</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
