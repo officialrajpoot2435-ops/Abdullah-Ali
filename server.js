@@ -1,5 +1,5 @@
 import express from "express";
-import dotenv from "dotenv";
+ dotenv from "dotenv";
 import OpenAI from "openai";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -56,20 +56,4 @@ ${message}
     });
 
   } catch (error) {
-    console.error(error);
-
-    res.status(500).json({
-      error: "AI service error."
-    });
-  }
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "public", "index.html")
-  );
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+    console.error(error)
